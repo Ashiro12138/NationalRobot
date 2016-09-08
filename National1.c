@@ -62,7 +62,6 @@ task main()
 		}
 	while(true)
 	{
-
 		//Testing white line
 		if(inf1==0&&inf2==0&&Rcomp==true){
 			Mstop();
