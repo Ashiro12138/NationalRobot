@@ -36,7 +36,8 @@ void Tleft()   {motor[FR] = Caim; 		motor[BR] = Caim; 			motor[BL] = Caim; 			mo
 void Tright()  {motor[FR] = -Caim;		motor[BR] = -Caim;			motor[BL] = -Caim;			motor[FL] = -Caim;}
 
 task main()
-{ //Initialize
+{
+	//Initialize
 	eraseDisplay();
 	if (!initSensor(&muxedSensor[0], msensor_S2_1, typeMode[0]))
 		writeDebugStreamLine("initSensor() failed! for msensor_S2_1");
@@ -62,6 +63,7 @@ task main()
 		}
 	while(true)
 	{
+
 		//Testing white line
 		if(inf1==0&&inf2==0&&Rcomp==true){
 			Mstop();
@@ -82,6 +84,7 @@ task main()
 			Mleft();
 			sleep(200);
 		}
+
 		//Gaining data from sensors
 		readSensor(&irSeeker1);
 		readSensor(&irSeeker2);
@@ -102,7 +105,7 @@ task main()
 				break;
 			}
 		}
-		//Displaying data
+
 		//Orbit Logic
 		if(comp>=mincomp&&comp<=maxcomp){
 			Rcomp = true;
@@ -135,6 +138,7 @@ task main()
 				}
 			}
 		}
+
 		//Compass logic
 		if(complogic==1){
 			if((comp<mincomp)||((comp>maxcomp+84))){
