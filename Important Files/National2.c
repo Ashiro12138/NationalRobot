@@ -42,17 +42,10 @@ void outliner()
 {
 	for (int i = 0; i < 3; i++)
 	{
-		if (!readSensor(&muxedSensor[i]))
+		if (!readSensor(&muxedSensor[i])){
 			writeDebugStreamLine("readSensor() failed! for %d", i);
-
-		switch(muxedSensor[i].typeMode)
-		{
-		case colorReflectedLight:
-			/*displayTextLine(i*3, "Chan[%d]: Ref Light", i+1);
-			displayTextLine(i*3 + 1, "Value: %d", muxedSensor[i].light);*/
-			mux[i] = muxedSensor[i].light;
-			break;
 		}
+		mux[i] = muxedSensor[i].light;
 	}
 	if(inferredFrontDirection==0&&inferredBackDirection==0&&compassTrigger==true){
 		Mstop();
