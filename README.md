@@ -1,3 +1,7 @@
 # NationalRobot
 
-It's not just the normal robots.
+Team Members: Jason and Josh
+
+Team Ages:
+Josh - 12
+Jason - 15
