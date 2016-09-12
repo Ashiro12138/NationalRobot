@@ -57,10 +57,10 @@ task main()
 	mincomp = goalcomp - range;
 	maxcomp = goalcomp + range;
 	if(comp <=90){
-			complogic = 1;
+		complogic = 1;
 		} else{
-			complogic = 2;
-		}
+		complogic = 2;
+	}
 	while(true)
 	{
 
@@ -70,7 +70,7 @@ task main()
 		}
 		if(mux[0]>10&&mux[2]>10){
 			Mback();
-			sleep(2500);
+			sleep(200);
 		}
 		else if(mux[0]>10){
 			Mright();
@@ -110,15 +110,19 @@ task main()
 		if(comp>=mincomp&&comp<=maxcomp){
 			Rcomp = true;
 			if(inf1s<inf2s){
-				if(inf2>=5&&inf2<=6)
-				{
-					Mleft();
-				}
-				else if(inf2==4)
-				{
-					Mright();
-				}
-				else{
+				if(inf2s>100){
+					if(inf2>=5&&inf2<=6)
+					{
+						Mleft();
+					}
+					else if(inf2==4)
+					{
+						Mright();
+					}
+					else{
+						Mback();
+					}
+					}else{
 					Mback();
 				}
 			}
@@ -132,19 +136,19 @@ task main()
 				{
 					Mmright();
 				}
-				if(inf1==5||inf1==6)
-				{
-					Mforward();
-				}
+			}
+			if(inf1==5){
+				Mforward();
 			}
 		}
+
 
 		//Compass logic
 		if(complogic==1){
 			if((comp<mincomp)||((comp>maxcomp+84))){
 				Tright();
 				Rcomp = false;
-			} else if((comp<maxcomp+84)&&(comp>maxcomp)){
+				} else if((comp<maxcomp+84)&&(comp>maxcomp)){
 				Tleft();
 				Rcomp = false;
 			}
@@ -153,7 +157,7 @@ task main()
 			if(((comp<mincomp-84))||(comp>maxcomp)){
 				Tleft();
 				Rcomp = false;
-			} else if((comp>mincomp-84)&&(comp<mincomp)){
+				} else if((comp>mincomp-84)&&(comp<mincomp)){
 				Tright();
 				Rcomp = false;
 			}
