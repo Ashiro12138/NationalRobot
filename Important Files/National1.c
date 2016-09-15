@@ -16,6 +16,7 @@ int Sorbit = 80; //Orbit Speed
 int Saim = 40; //Aiming Speed
 int Caim = 20; //Compass Aiming Speed
 int range = 6; //Radius of Accuracy (The lower the better accuarcy)
+int rangedif = 90-range;
 int Sshooting = 100; //Shooting Speed
 int comp,inf1,inf1s,inf2,inf2s,maxcomp,mincomp,complogic;
 bool Rcomp;
@@ -145,19 +146,19 @@ task main()
 
 		//Compass logic
 		if(complogic==1){
-			if((comp<mincomp)||((comp>maxcomp+84))){
+			if((comp<mincomp)||((comp>maxcomp+rangedif))){
 				Tright();
 				Rcomp = false;
-				} else if((comp<maxcomp+84)&&(comp>maxcomp)){
+				} else if((comp<maxcomp+rangedif)&&(comp>maxcomp)){
 				Tleft();
 				Rcomp = false;
 			}
 		}
 		else{
-			if(((comp<mincomp-84))||(comp>maxcomp)){
+			if(((comp<mincomp-rangedif))||(comp>maxcomp)){
 				Tleft();
 				Rcomp = false;
-				} else if((comp>mincomp-84)&&(comp<mincomp)){
+				} else if((comp>mincomp-rangedif)&&(comp<mincomp)){
 				Tright();
 				Rcomp = false;
 			}
