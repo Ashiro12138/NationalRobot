@@ -3,7 +3,7 @@
 Team Members: Jason and Josh
 
 Team Ages:
-Josh - 12
+Josh - 11
 Jason - 15
 
 # Best Program So Far
