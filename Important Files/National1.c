@@ -96,15 +96,7 @@ task main()
 		inf2s = irSeeker2.enhStrength;
 		for (int i = 0; i < 3; i++)
 		{
-			if (!readSensor(&muxedSensor[i]))
-				writeDebugStreamLine("readSensor() failed! for %d", i);
-
-			switch(muxedSensor[i].typeMode)
-			{
-			case colorReflectedLight:
-				mux[i] = muxedSensor[i].light;
-				break;
-			}
+			mux[i] = muxedSensor[i].light;
 		}
 
 		//Orbit Logic
