@@ -12,6 +12,6 @@ void Mforward(){motor[FR] = Sshooting;motor[BR] = Sshooting; 	motor[BL] = -Sshoo
 task main()
 {
 	while(1){
-		Mfoward();
+		Mforward();
 	}
 }
