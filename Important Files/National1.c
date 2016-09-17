@@ -70,7 +70,7 @@ task main()
 		}
 		if(mux[0]>10&&mux[2]>10){
 			Mback();
-			sleep(200);
+			sleep(1000);
 		}
 		else if(mux[0]>10){
 			Mright();
