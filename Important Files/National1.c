@@ -40,14 +40,18 @@ task main()
 {
 	//Initialize
 	eraseDisplay();
-	if (!initSensor(&muxedSensor[0], msensor_S2_1, typeMode[0]))
+	if (!initSensor(&muxedSensor[0], msensor_S2_1, typeMode[0])){
 		writeDebugStreamLine("initSensor() failed! for msensor_S2_1");
+	}
 
-	if (!initSensor(&muxedSensor[1], msensor_S2_2, typeMode[1]))
+	if (!initSensor(&muxedSensor[1], msensor_S2_2, typeMode[1])){
 		writeDebugStreamLine("initSensor() failed! for msensor_S2_2");
+	}
 
-	if (!initSensor(&muxedSensor[2], msensor_S2_3, typeMode[2]))
+	if (!initSensor(&muxedSensor[2], msensor_S2_3, typeMode[2])){
 		writeDebugStreamLine("initSensor() failed! for msensor_S2_3");
+	}
+
 	tHTIRS2 irSeeker1;
 	tHTIRS2 irSeeker2;
 
